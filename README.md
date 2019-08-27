@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -30,3 +31,8 @@ Console/git bash :
 - composer install
 - php artisan serve
 - .sh/bash_scripts/migrate.bat
+=======
+# IT-HELPDESK
+
+Agate IT Support Dashboard
+>>>>>>> eb1a90c4e57924f539cc3cad9b0b40f1c56d5b59
