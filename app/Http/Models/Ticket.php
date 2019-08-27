@@ -3,9 +3,11 @@
 namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Ticket extends Model
 {
+    use Notifiable;
     //
     protected $table = 'tb_tickets';
     protected $fillable = [

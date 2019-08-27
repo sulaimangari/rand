@@ -29,6 +29,7 @@ Route::get('/auth/callback', [
 ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/notif', 'HomeController@sendNotification')->name('notif');
 
 Route::group(['prefix' => 'user'], function () {
     Route::get('/home', [
@@ -75,10 +76,16 @@ Route::group(['prefix' => 'admin'], function () {
             'as' => 'editTicket',
             'uses' => 'TicketController@editTicket'
         ])->middleware('role:admin');
+
         Route::post('/update', [
             'as' => 'updateTicket',
             'uses' => 'TicketController@updateTicket'
         ])->middleware('role:admin');
+
+        // Route::get('/notif', [
+        //     'as' => 'notifTicket',
+        //     'uses' => 'TicketController@notifTicket'
+        // ]);
     });
 
     Route::group(['prefix' => 'device', 'middleware' => ['role:admin']], function () {

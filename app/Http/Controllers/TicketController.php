@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Models\Ticket;
 use Auth;
+use App\Notifications\TicketNotification;
 use function GuzzleHttp\Promise\all;
 
 class TicketController extends Controller
@@ -36,6 +37,7 @@ class TicketController extends Controller
 
     public function storeTicket(Request $request)
     {
+
         $request->validate([
             // 'ticket_crew' => 'required',
             'ticket_room' => 'required',
@@ -59,13 +61,18 @@ class TicketController extends Controller
 
         $ticket->save();
 
+        $user = Auth::user();
+
+        $user->notify(new TicketNotification());
+
         $request->session()->flash('message', 'Ticket has been issued!');
 
-        if (Auth::user()->role === 'admin') {
+        if ($user->hasRole('admin')) {
             return redirect()->route('listTicket');
         } else {
             return redirect()->route('ticketUser');
         }
+
 
         // return redirect()->route('createTicket')->with('message', 'Ticket has been issued!');
     }
@@ -114,4 +121,13 @@ class TicketController extends Controller
 
         return redirect()->route('listTicket')->with('message', 'Ticket has been deleted!');
     }
+
+    // public function notifTicket()
+    // {
+    //     $ticket = Auth::user();
+
+    //     // $ticket->email = 'brandflouride@gmail.com';
+
+    //     $ticket->notify(new TicketNotification());
+    // }
 }

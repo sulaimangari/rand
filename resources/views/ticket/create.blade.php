@@ -17,7 +17,10 @@
 </section>
 
 <section class="content">
-    <div class="row">
+    <div class="box-header with-border">
+        <h3 class="box-title">Quick Example</h3>
+    </div>
+    <div class="row with-border">
         <div class="col-md-12">
             @if ($errors->any())
             <div class="callout callout-danger">

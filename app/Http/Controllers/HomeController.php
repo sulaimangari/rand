@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Models\Ticket;
+use App\Http\Models\Borrow;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,7 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // $username = Auth::user()->id;
+        $countTicket = Ticket::count();
+        $countDevice = Borrow::count();
+        $tickets = Ticket::get();
+
+        return view('home', compact('countTicket', 'countDevice', 'tickets'));
+        // return view('home');
     }
 
     public function user()

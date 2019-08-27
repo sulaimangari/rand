@@ -41,9 +41,10 @@ class TicketNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->line('You got a new ticket.')
+            // ->action('Visit', url('/'))
+            ->action('Visit', url('/admin/ticket/table'))
+            ->line('Thank you for using our application!');
     }
 
     /**
