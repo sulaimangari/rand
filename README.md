@@ -1,12 +1,12 @@
-<<<<<<< HEAD
 # About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 # Files
+
 ### Server Requirements
 
-The Laravel framework has a few system requirements. All of these requirements are satisfied by the  [Laravel Homestead](https://laravel.com/docs/5.8/homestead)  virtual machine, so it's highly recommended that you use Homestead as your local Laravel development environment.
+The Laravel framework has a few system requirements. All of these requirements are satisfied by the [Laravel Homestead](https://laravel.com/docs/5.8/homestead) virtual machine, so it's highly recommended that you use Homestead as your local Laravel development environment.
 
 However, if you are not using Homestead, you will need to make sure your server meets the following requirements:
 
@@ -20,19 +20,15 @@ However, if you are not using Homestead, you will need to make sure your server 
 -   Tokenizer PHP Extension
 -   XML PHP Extension
 
+## Installing Agate IT Support WebApps
 
+install :
 
-## Installing Agate IT Support WebApps 
- install : 
-- postgreSQL 10
-- composer
+-   postgreSQL 10
+-   composer
 
 Console/git bash :
-- composer install
-- php artisan serve
-- .sh/bash_scripts/migrate.bat
-=======
-# IT-HELPDESK
 
-Agate IT Support Dashboard
->>>>>>> eb1a90c4e57924f539cc3cad9b0b40f1c56d5b59
+-   composer install
+-   php artisan serve
+-   .sh/bash_scripts/migrate.bat
