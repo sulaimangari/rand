@@ -49,6 +49,29 @@ class PermissionController extends Controller
         return redirect()->route('adminUser')->with('message', 'Admin Succesfully updated');
     }
 
+    public function addUser()
+    {
+        return view('permission.add');
+    }
+
+    public function storeUser(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+
+        $data = new User([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+        ]);
+
+        $data->save();
+
+        return redirect()->route('listUser')->with('message', 'User Succesfully added');
+    }
+
     public function destroyUser(Request $request)
     {
 

@@ -183,6 +183,16 @@ Route::group(['prefix' => 'admin'], function () {
             'uses' => 'PermissionController@storeAdmin'
         ]);
 
+        Route::get('/add', [
+            'as' => 'addUser',
+            'uses' => 'PermissionController@addUser'
+        ]);
+
+        Route::post('/add/store', [
+            'as' => 'storeUser',
+            'uses' => 'PermissionController@storeUser'
+        ]);
+
         Route::delete('/delete', [
             'as' => 'destroyUser',
             'uses' => 'PermissionController@destroyUser',

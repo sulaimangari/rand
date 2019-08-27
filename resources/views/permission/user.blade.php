@@ -43,6 +43,12 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-body">
+                    <div class="box-header">
+                        <div class="pull-right">
+                            <a href="{{route('addUser')}}" class="btn btn-block btn-success"><i class="fa fa-plus"></i>
+                                Add New User </a>
+                        </div>
+                    </div>
                     <table id="myTable" class="table table-striped table-bordered nowrap" style="width:100%">
                         <thead>
                             <tr>

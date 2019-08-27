@@ -1,7 +1,19 @@
 @extends('user.layout')
 
 @section('style')
+<link rel="stylesheet" href="{{ asset('https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css')}}">
+<link rel="stylesheet"
+    href="{{ asset('https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.bootstrap.min.css')}}">
+<link rel="stylesheet"
+    href="{{ asset('https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css')}}">
 
+
+
+<style>
+    .dataTables_filter {
+        text-align: right;
+    }
+</style>
 @endsection
 @section('content')
 <section class="content-header">
@@ -11,6 +23,16 @@
 </section>
 
 <section class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            @if(session()->get('message'))
+            <div class="callout callout-success">
+                {{ session()->get('message') }}
+            </div>
+            @endif
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-lg-3 col-xs-6">
             <!-- small box -->
@@ -43,7 +65,6 @@
                         class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
-
     </div>
 </section>
 
